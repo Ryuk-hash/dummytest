@@ -8,3 +8,5 @@ added a line 5
 added a line 8
 
 added a line 10
+
+added a new line

@@ -13,6 +13,6 @@ jobs:
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://github.com/rtCamp.png?size=48
           SLACK_MESSAGE: 'Deployment successful :rocket:'
-          SLACK_TITLE: Deployment Successful for ${{ job.name }}
+          SLACK_TITLE: Deployment Successful
           SLACK_USERNAME: rtBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
