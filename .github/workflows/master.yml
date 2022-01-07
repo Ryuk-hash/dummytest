@@ -22,7 +22,7 @@ jobs:
           SLACK_CHANNEL: github
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://github.com/rtCamp.png?size=48
-          SLACK_MESSAGE: ${{ needs.mainJob.result == 'success' && '${{ name }} - Deployment was successful!' || 'Deployment has failed!' }}
+          SLACK_MESSAGE: ${{ needs.mainJob.result == 'success' && 'name' + 'Deployment was successful!' || 'Deployment has failed!' }}
           SLACK_TITLE: ${{ needs.mainJob.result == 'success' && 'Deployment successful :white_check_mark:' || 'Deployment failed :negative_squared_cross_mark:' }}
           SLACK_USERNAME: rtBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
