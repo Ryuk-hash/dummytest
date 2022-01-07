@@ -3,9 +3,6 @@ on:
   push:
     branches: [master]
 
-env:
-  fileName: ${{ name }}
-
 jobs:
   mainJob:
     runs-on: ubuntu-latest
@@ -25,7 +22,7 @@ jobs:
           SLACK_CHANNEL: github
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://github.com/rtCamp.png?size=48
-          SLACK_MESSAGE: ${{ needs.mainJob.result == 'success' && 'Deployment was successful!' || 'Deployment has failed!' }}
-          SLACK_TITLE: ${{ needs.mainJob.result == 'success' && 'env.fileName' && '- Deployment successful :white_check_mark:' || 'Deployment failed :negative_squared_cross_mark:' }}
+          SLACK_MESSAGE: ${{ needs.mainJob.result == 'success' && 'Testing Depdendent Jobs - Deployment was successful!' || 'Testing Depdendent Jobs - Deployment has failed!' }}
+          SLACK_TITLE: ${{ needs.mainJob.result == 'success' && 'Deployment successful :white_check_mark:' || 'Deployment failed :negative_squared_cross_mark:' }}
           SLACK_USERNAME: rtBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
